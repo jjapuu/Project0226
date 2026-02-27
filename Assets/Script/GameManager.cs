@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,8 +7,7 @@ public class GameManager : MonoBehaviour
     public float speedPlayer = 4.0f;
     public float jumpPlayer = 7.0f;
     public float speedFloor = 2.0f;
-    public float forcePlayer = 3000.0f;
-    public float forceSpear = 1000.0f;
+
 
     public float GetJumpPower()
     {
@@ -23,7 +23,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("EndScene");
+        }
     }
 
 }

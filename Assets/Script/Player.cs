@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         {
             jumpPlayer();
         }
+        transform.Translate(Vector3.left * gameManager.speedFloor * Time.deltaTime);
 
         // 경계값 제한
         Vector3 newPos = transform.position + moveOffset;
