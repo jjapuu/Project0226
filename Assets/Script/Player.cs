@@ -36,6 +36,12 @@ public class Player : MonoBehaviour
 
         transform.position = newPos; //플레이어의 위치를 업데이트
 
+        // 플레이어가 화면 밖으로 나가면 EndScene으로 이동
+        if (transform.position.y < -6.0f)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -50,5 +56,6 @@ public class Player : MonoBehaviour
     {
         rb.AddForce(Vector2.up * gameManager.GetJumpPower(), ForceMode2D.Impulse); //플레이어의 Rigidbody2D에 점프 힘을 추가하여 점프를 수행
         isGrounded = false; //점프 후에는 플레이어가 바닥에 있지 않다고 설정
+
     }
 }

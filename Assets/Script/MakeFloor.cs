@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MakeFloor : MonoBehaviour
 {
+    GameManager gameManager;
+
     public GameObject floor;
     public GameObject noFloor;
 
@@ -14,6 +16,7 @@ public class MakeFloor : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager = GetComponent<GameManager>();
         lastSpawned = Instantiate(floor, new Vector3(12.8f, -4.2f, 0), Quaternion.identity);
     }
 
@@ -47,6 +50,7 @@ public class MakeFloor : MonoBehaviour
         {
             lastSpawned = Instantiate(noFloor, pos, Quaternion.identity);
             spawnFailCount++;
+            gameManager.AddScore();
         }
     }
 }

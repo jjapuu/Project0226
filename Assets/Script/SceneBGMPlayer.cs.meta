@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf3ecd17600cfd5438a091bf1c387f05
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bgmjump: {fileID: 8300000, guid: 2ea1f57ca47c5f744b91ffc680c6bddd, type: 3}
+  - bgmStart: {fileID: 8300000, guid: 98cad1a52a9380149843e64f9ccbab2e, type: 3}
+  - bgmGame: {fileID: 8300000, guid: e612c4d72b84bd348bc99b07694814a6, type: 3}
+  - bgmEnd: {fileID: 8300000, guid: 0028e7822efd0cf448c6971bd87f8375, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

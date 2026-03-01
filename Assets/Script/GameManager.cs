@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,15 @@ public class GameManager : MonoBehaviour
     public float jumpPlayer = 7.0f;
     public float speedFloor = 2.0f;
 
+    public int scorePer = 1;
+    public TMP_Text textScore;
+
+    int score = 0;
+
 
     public float GetJumpPower()
     {
-        return jumpPlayer;
+        return jumpPlayer; 
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,10 +29,23 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("EndScene");
         }
+    }
+
+    public void AddScore()
+    {
+        score += scorePer;
+        updateScore();
+        
+    }
+
+    void updateScore()
+    {
+        textScore.text = $"score: {score}";
     }
 
 }
